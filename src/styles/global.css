@@ -269,9 +269,25 @@ html[data-theme="dark"] .stroke-text {
 }
 
 .app-prose img {
+  display: block;
+  /* 文章内插图：跟随容器宽度，但封顶 28rem (448px)，避免吃满整个内容列 */
+  max-width: min(100%, 28rem);
+  width: auto;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 4px;
+  /* 配图周围留一圈宣纸感的暖底色，让 SVG/插图有"挂起来"的感觉 */
+  padding: 0.75rem;
+  background: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+html[data-theme="dark"] .app-prose img {
+  background: color-mix(in srgb, var(--muted) 60%, transparent);
+}
+
+/* 首图特写：如果文章第一张图想顶满，可以加 .full-bleed 类 */
+.app-prose img.full-bleed {
   max-width: 100%;
-  border-radius: 6px;
-  margin: 1em auto;
 }
 
 .app-prose table {
