@@ -14,25 +14,38 @@ import { siteUrl } from "@/utils/siteUrl";
         class="focus-outline -ms-2 mt-8 mb-2 hover:text-foreground/75"
       >
         <IconChevronLeft class="inline-block size-6 rtl:rotate-180" />
-        <span>Go back</span>
+        <span>返回</span>
       </LinkButton>
     </div>
   )
 }
 
 <script>
-  /* Update Search Praam */
-  function updateGoBackUrl() {
+  /* Go back: 优先 history.back() 回上一页, 栈不可用降级到 href。
+     之前用 sessionStorage 把"上一页"持久化, 写入端分散在多页,
+     有概率把脏的 origin 写进去导致跳根域。
+     直接用浏览器原生 history, 语义更稳:
+       - 从站内别处点进来: history.back() 回上一页
+       - 直接打开当前页 (刷新/书签/外链): history.length<=1 -> 用 href 兜底回首页
+  */
+  function updateGoBack() {
     const backButton: HTMLAnchorElement | null =
       document.querySelector("#back-button");
+    if (!backButton) return;
 
-    const backUrl = sessionStorage.getItem("backUrl");
-
-    if (backUrl && backButton) {
-      backButton.href = backUrl;
-    }
+    backButton.addEventListener(
+      "click",
+      (e) => {
+        if (window.history.length > 1) {
+          e.preventDefault();
+          window.history.back();
+        }
+        // 否则让默认的 href 生效(回首页/站点根)
+      },
+      { passive: false }
+    );
   }
 
-  document.addEventListener("astro:page-load", updateGoBackUrl);
-  updateGoBackUrl();
+  document.addEventListener("astro:page-load", updateGoBack);
+  updateGoBack();
 </script>
