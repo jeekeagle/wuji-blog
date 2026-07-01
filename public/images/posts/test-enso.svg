@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <!-- 笔触粗细感：stroke 末端略糙 -->
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" />
+      <feDisplacementMap in="SourceGraphic" scale="1.6" />
+    </filter>
+    <!-- 笔触由浓到淡的渐变 -->
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.95" />
+      <stop offset="70%" stop-color="#2a2a2a" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#5a5046" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <!-- 宣纸底 -->
+  <rect width="400" height="400" fill="#faf7f0" />
+
+  <!-- 主圆：ensō，不闭合，留一道口子 -->
+  <path
+    d="M 320 180
+       C 320 280, 240 340, 160 330
+       C 80 320, 40 240, 60 160
+       C 80 80, 180 40, 260 70
+       C 300 85, 320 110, 318 140"
+    stroke="url(#ink)"
+    stroke-width="22"
+    stroke-linecap="round"
+    filter="url(#rough)"
+  />
+
+  <!-- 收笔处滴下的一点墨 -->
+  <circle cx="318" cy="146" r="6" fill="#1a1a1a" opacity="0.75" />
+
+  <!-- 朱砂印章 -->
+  <g transform="translate(220 230) rotate(-3)">
+    <rect x="0" y="0" width="44" height="44" fill="#a8311a" rx="2" />
+    <text x="22" y="33" text-anchor="middle"
+          font-family="STKaiti, KaiTi, serif"
+          font-size="28" font-weight="700"
+          fill="#faf7f0">無</text>
+  </g>
+
+  <!-- 题款 -->
+  <text x="40" y="380"
+        font-family="STKaiti, KaiTi, serif"
+        font-size="14" fill="#3a3630" opacity="0.7"
+        letter-spacing="0.3em">試 筆 · 二〇二六</text>
+</svg>

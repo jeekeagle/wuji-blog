@@ -9,6 +9,7 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { SITE } from "./src/config";
+import { rehypeBasePrefix } from "./src/utils/rehypeBasePrefix";
 
 // https://astro.build/config
 // 部署到 GitHub Pages 项目页（jeekeagle.github.io/wuji-blog/）时
@@ -26,6 +27,7 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    rehypePlugins: [rehypeBasePrefix(BASE_PATH)],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
