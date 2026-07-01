@@ -15,16 +15,17 @@ import { siteUrl } from "@/utils/siteUrl";
     class="app-layout flex flex-1 items-center justify-center py-24"
   >
     <div class="flex flex-col items-center justify-center text-center">
-      <!-- 印章：朱砂底,无字变 '无' —— 不抢戏 -->
+      <!-- 印章:朱砂底,反白一个'无'字 -->
       <span class="site-seal" aria-hidden="true">無</span>
 
       <h1
-        class="mt-8 text-2xl font-semibold tracking-widest text-fg-deep sm:text-3xl"
+        class="mt-8 text-2xl font-semibold tracking-widest sm:text-3xl"
+        style="color: var(--fg-deep)"
       >
         此页未着墨
       </h1>
 
-      <p class="mt-4 max-w-md text-foreground/70 leading-relaxed">
+      <p class="mt-4 max-w-md leading-relaxed text-foreground/70">
         你寻的那一笔,
         <br class="sm:hidden" />
         也许从未落下,也许落在了别处。
