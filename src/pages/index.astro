@@ -11,6 +11,7 @@ import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
+import { siteUrl } from "@/utils/siteUrl";
 
 const posts = await getCollection("blog");
 
@@ -36,7 +37,7 @@ const recentPosts = sortedPosts.filter(({ data }) => data.featured === undefined
         <span class="site-seal" aria-hidden="true">無</span>
         <a
           target="_blank"
-          href="/rss.xml"
+          href={siteUrl("/rss.xml")}
           class="ml-auto inline-block opacity-60 transition-opacity hover:opacity-100"
           aria-label="rss feed"
           title="RSS Feed"
@@ -109,7 +110,7 @@ const recentPosts = sortedPosts.filter(({ data }) => data.featured === undefined
     }
 
     <div class="my-8 text-center">
-      <LinkButton href="/posts/">
+      <LinkButton href={siteUrl("/posts/")}>
         全部文字
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
