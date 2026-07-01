@@ -7,25 +7,65 @@ import { SITE } from "@/config";
 import { siteUrl } from "@/utils/siteUrl";
 ---
 
-<Layout title={`404 Not Found | ${SITE.title}`}>
+<Layout title={`404 · 此页未着墨 | ${SITE.title}`} description="此处留白,无可寻之径。">
   <Header />
 
   <main
     id="main-content"
-    class="app-layout flex flex-1 items-center justify-center"
+    class="app-layout flex flex-1 items-center justify-center py-24"
   >
-    <div class="mb-14 flex flex-col items-center justify-center">
-      <h1 class="text-9xl font-bold text-accent">404</h1>
-      <span aria-hidden="true">¯\_(ツ)_/¯</span>
-      <p class="mt-4 text-2xl sm:text-3xl">Page Not Found</p>
-      <LinkButton
-        href={siteUrl("/")}
-        class="my-6 text-lg underline decoration-dashed underline-offset-8"
+    <div class="flex flex-col items-center justify-center text-center">
+      <!-- 印章：朱砂底,无字变 '无' —— 不抢戏 -->
+      <span class="site-seal" aria-hidden="true">無</span>
+
+      <h1
+        class="mt-8 text-2xl font-semibold tracking-widest text-fg-deep sm:text-3xl"
       >
-        Go back home
-      </LinkButton>
+        此页未着墨
+      </h1>
+
+      <p class="mt-4 max-w-md text-foreground/70 leading-relaxed">
+        你寻的那一笔,
+        <br class="sm:hidden" />
+        也许从未落下,也许落在了别处。
+      </p>
+
+      <p class="mt-2 text-sm italic text-foreground/40">
+        404 · 这里是一片干净的留白
+      </p>
+
+      <div class="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+        <LinkButton href={siteUrl("/")} class="px-5">
+          回到首页
+        </LinkButton>
+        <LinkButton href={siteUrl("/posts/")} class="px-5">
+          翻翻旧的字
+        </LinkButton>
+      </div>
     </div>
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+  .site-seal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--accent);
+    color: #faf8f3;
+    font-family: "STKaiti", "KaiTi", "霞鹜文楷", "LXGW WenKai", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 4px;
+    transform: rotate(-4deg);
+    box-shadow:
+      0 1px 0 color-mix(in srgb, #000 30%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, #fff 15%, transparent);
+    user-select: none;
+    opacity: 0.92;
+  }
+</style>
