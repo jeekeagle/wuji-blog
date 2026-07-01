@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- 印章边缘磨损感 -->
+    <filter id="worn" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="7" />
+      <feDisplacementMap in="SourceGraphic" scale="2" />
+    </filter>
+    <!-- 朱砂：略偏旧，不那么鲜亮 -->
+    <linearGradient id="vermilion" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8311a" />
+      <stop offset="100%" stop-color="#8a2812" />
+    </linearGradient>
+  </defs>
+
+  <!-- 方框：朱砂印底 -->
+  <g transform="rotate(-3 60 60)" filter="url(#worn)">
+    <rect x="6" y="6" width="108" height="108" fill="url(#vermilion)" rx="3" />
+    <!-- 边框略凹陷的细线 -->
+    <rect x="10" y="10" width="100" height="100" fill="none"
+          stroke="#5a1a0a" stroke-width="1.2" opacity="0.4" rx="2" />
+  </g>
+
+  <!-- 「無」字 -->
+  <g transform="rotate(-3 60 60)">
+    <text x="60" y="86" text-anchor="middle"
+          font-family="STKaiti, KaiTi, '霞鹜文楷', serif"
+          font-size="78" font-weight="700"
+          fill="#faf7f0">無</text>
+  </g>
+</svg>
