@@ -18,6 +18,10 @@ const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => data.featured === undefined || !data.featured);
+// 首页已展示的总数(featured + recent 的前 N 篇)
+const shownOnHome = featuredPosts.length + Math.min(recentPosts.length, SITE.postPerIndex);
+const totalCount = sortedPosts.length;
+const hiddenCount = Math.max(totalCount - shownOnHome, 0);
 ---
 
 <Layout>
@@ -114,6 +118,13 @@ const recentPosts = sortedPosts.filter(({ data }) => data.featured === undefined
         全部文字
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
+      {
+        hiddenCount > 0 && (
+          <p class="mt-3 text-sm text-foreground/50">
+            首页 {shownOnHome} 篇 · 另有 <span class="text-foreground/70">{hiddenCount}</span> 篇在归档
+          </p>
+        )
+      }
     </div>
   </main>
   <Footer />
