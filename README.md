@@ -12,10 +12,13 @@ pnpm dev      # http://localhost:4321
 pnpm build    # 构建 + pagefind 索引
 ```
 
+> pnpm 版本要求：与 `.github/workflows/deploy.yml` 一致，`10.11.1`（Corepack 内置即可，`corepack enable && corepack prepare pnpm@10.11.1 --activate`）。
+
 ## 部署
 
-- 域名：`https://jeekeagle.github.io/NextBlog/`
+- 域名：`https://jeekeagle.github.io/wuji-blog/`
 - 部署方式：GitHub Pages（后续切 Vercel，只改 `src/config.ts` 的 `website`）
+- base path：项目页固定 `/wuji-blog`，由 `deploy.yml` 注入 `BASE_PATH` 环境变量；切到根域 / 自定义域名时去掉。
 
 ## 目录
 
