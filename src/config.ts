@@ -7,7 +7,9 @@ export const SITE = {
   title: "无记",
   ogImage: "og.png",
   lightAndDarkMode: true,
-  postPerIndex: 4,
+  // 文章总数 3 篇时,首页显示 3 篇比"显示 4 篇剩下的 1 篇列表里空着"更克制。
+  // 以后写满 4 篇再改回 4。
+  postPerIndex: 3,
   postPerPage: 8,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
@@ -19,6 +21,6 @@ export const SITE = {
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
-  lang: "zh", // html lang code. Set this empty and default will be "en"
+  lang: "zh-CN", // html lang code: zh-CN 比 zh 更精确,SEO/读屏都更友好
   timezone: "Asia/Shanghai", // Default global timezone (IANA format)
 } as const;
