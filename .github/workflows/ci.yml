@@ -48,3 +48,7 @@ jobs:
 
       - name: "🚀 Build the project"
         run: pnpm run build
+        env:
+          # 与 deploy.yml 对齐：项目页部署到 https://jeekeagle.github.io/wuji-blog/
+          # PR 检查应复现生产环境，避免本地 build 与生产 base path 不一致
+          BASE_PATH: /wuji-blog
