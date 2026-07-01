@@ -1,0 +1,361 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ============ 无记 · 禅意 design tokens ============ */
+:root,
+html[data-theme="light"] {
+  /* 宣纸白：比纯白稍暖，呼应中式审美 */
+  --bg: #faf7f0;
+  --fg-light: #a39c8e;
+  --fg: #6b655a;
+  --fg-deep: #2a2622;
+  --fg-deeper: #131110;
+  --background: var(--bg);
+  --foreground: var(--fg-deep);
+  /* 朱砂：克制使用，只做印章/重点强调 */
+  --accent: #a8311a;
+  --muted: #ebe5d6;
+  --border: #d9d1bf;
+  --header-border: #e6dfcd;
+}
+
+html[data-theme="dark"] {
+  /* 暗色：墨色，宣纸倒置 */
+  --bg: #0e0d0b;
+  --fg-light: #6a655a;
+  --fg: #a8a298;
+  --fg-deep: #d8d2c4;
+  --fg-deeper: #f4efe1;
+  --background: var(--bg);
+  --foreground: var(--fg-deep);
+  /* 残烛暖光 */
+  --accent: #c25636;
+  --muted: #1c1a16;
+  --border: #2c2823;
+  --header-border: #1f1c18;
+}
+
+@theme inline {
+  /* 无记：霞鹜文楷 + 楷体回退，中文衬线感 */
+  --font-app: "LXGW WenKai", "STKaiti", "KaiTi", "霞鹜文楷", "Noto Serif SC", serif;
+  --font-mono: "LXGW WenKai Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+    color-scheme: light dark;
+  }
+  body {
+    @apply flex min-h-svh flex-col bg-background font-app text-foreground;
+    background-color: var(--bg);
+    color: var(--fg);
+    /* 纸感：底层宣纸色 + 顶部一抹极淡的墨晕 */
+    background-image:
+      radial-gradient(
+        ellipse 80% 50% at 50% -10%,
+        color-mix(in srgb, var(--accent) 8%, transparent) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 100% 110%,
+        color-mix(in srgb, var(--fg) 6%, transparent) 0%,
+        transparent 65%
+      );
+    background-attachment: fixed;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    color: var(--fg-deeper);
+  }
+  a,
+  button {
+    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  code, pre, kbd, samp {
+    font-family: var(--font-mono);
+  }
+}
+
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+@utility app-layout {
+  @apply mx-auto w-full max-w-app px-4;
+}
+
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-8;
+}
+
+/* ============ 无记 · 纸纤维点状动效背景 ============ */
+.dots-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    /* 暖灰大点（稀疏）*/
+    radial-gradient(circle, rgb(120 100 70 / 0.12) 1px, transparent 1.2px),
+    /* 中点 */
+    radial-gradient(circle, rgb(120 100 70 / 0.08) 0.8px, transparent 1px),
+    /* 小点（密）*/
+    radial-gradient(circle, rgb(120 100 70 / 0.05) 0.6px, transparent 0.8px);
+  background-size: 64px 64px, 32px 32px, 16px 16px;
+  background-position: 0 0, 0 0, 0 0;
+  animation: dots-drift 60s linear infinite;
+}
+
+html[data-theme="dark"] .dots-bg {
+  background-image:
+    radial-gradient(circle, rgb(220 200 160 / 0.12) 1px, transparent 1.2px),
+    radial-gradient(circle, rgb(220 200 160 / 0.08) 0.8px, transparent 1px),
+    radial-gradient(circle, rgb(220 200 160 / 0.05) 0.6px, transparent 0.8px);
+}
+
+@keyframes dots-drift {
+  0%   { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 64px 64px, -32px 32px, 16px -16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dots-bg { animation: none; }
+}
+
+/* ============ Eagle 入场动画 ============ */
+@keyframes slide-enter {
+  0%   { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+.slide-enter {
+  animation: slide-enter 0.4s both;
+  animation-delay: calc(var(--enter-stage, 0) * var(--enter-step, 60ms));
+}
+
+/* ============ 无记 · 文字描边（年份 / 大标题） ============ */
+.stroke-text {
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: color-mix(in srgb, var(--fg) 50%, transparent);
+  color: transparent;
+  font-weight: 700;
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stroke-text-2 {
+  -webkit-text-stroke-width: 2px;
+}
+
+html[data-theme="dark"] .stroke-text {
+  opacity: 0.2;
+}
+
+/* ============ Eagle Prose / 文章正文样式 ============ */
+.app-prose {
+  color: var(--fg);
+  line-height: 1.8;
+}
+
+.app-prose h1, .app-prose h2, .app-prose h3, .app-prose h4 {
+  color: var(--fg-deeper);
+  font-weight: 700;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.app-prose h1 { font-size: 1.6em; }
+.app-prose h2 {
+  font-size: 1.4em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #8883;
+}
+.app-prose h3 { font-size: 1.2em; }
+.app-prose h4 { font-size: 1.05em; }
+
+.app-prose p { margin: 1em 0; }
+
+.app-prose a {
+  color: var(--fg-deeper);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #7d7d7d4d;
+  transition: border-color 0.3s;
+}
+.app-prose a:hover { border-bottom-color: var(--fg); }
+
+.app-prose strong {
+  color: var(--fg-deeper);
+  font-weight: 600;
+}
+
+.app-prose em {
+  font-style: italic;
+  color: var(--fg-deep);
+  font-family: "STKaiti", "KaiTi", "霞鹜文楷", serif;
+  font-size: 1.02em;
+}
+
+.app-prose code {
+  background: #aaaaaa18;
+  border-radius: 0.25rem;
+  margin: -0.2em 0;
+  padding: 0.2em 0.3em;
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  font-weight: 500;
+}
+
+.app-prose pre {
+  background: #aaaaaa18;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.app-prose pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.app-prose blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #8885;
+  background: #8881;
+  font-style: normal;
+  color: var(--fg-deep);
+  border-radius: 0 4px 4px 0;
+}
+
+.app-prose blockquote p { margin: 0.3em 0; }
+
+.app-prose hr {
+  width: 50px;
+  margin: 2em auto;
+  border: 0;
+  border-top: 1px solid #7d7d7d4d;
+}
+
+.app-prose ul, .app-prose ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.app-prose li {
+  margin: 0.4em 0;
+}
+
+.app-prose img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 1em auto;
+}
+
+.app-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.app-prose th, .app-prose td {
+  border: 1px solid #8883;
+  padding: 0.5em 0.8em;
+  text-align: left;
+}
+
+.app-prose th {
+  background: #8881;
+  font-weight: 600;
+}
+
+/* ============ 无记 · Magic Link（社交胶囊） ============ */
+.magic-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--fg) 12%, transparent);
+  border: 0;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9em;
+  transition: background 0.15s;
+}
+.magic-link:hover {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* ============ opacity 简写 ============ */
+.op-30 { opacity: 0.3; }
+.op-40 { opacity: 0.4; }
+.op-50 { opacity: 0.5; }
+.op-60 { opacity: 0.6; }
+.op-75 { opacity: 0.75; }
+
+/* ============ 无记 · 印章 工具类 ============ */
+.seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.5rem;
+  background: var(--accent);
+  color: #faf7f0;
+  font-family: "STKaiti", "KaiTi", "霞鹜文楷", "LXGW WenKai", serif;
+  font-weight: 700;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  box-shadow: 0 1px 0 color-mix(in srgb, #000 25%, transparent);
+  user-select: none;
+  transform: rotate(-2deg);
+}
+.seal--sm { padding: 0.25rem 0.35rem; font-size: 0.85rem; }
+.seal--lg { padding: 0.6rem 0.8rem; font-size: 1.25rem; }
+
+/* ============ 无记 · 朱砂横批（页眉/页脚装饰线） ============ */
+.zhu-line {
+  display: inline-block;
+  height: 1px;
+  width: 2.5rem;
+  background: var(--accent);
+  vertical-align: middle;
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}
+
+/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
+:target {
+  scroll-margin-block: 1rem;
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

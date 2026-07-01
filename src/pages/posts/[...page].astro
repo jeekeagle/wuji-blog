@@ -1,0 +1,150 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Main from "@/layouts/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Pagination from "@/components/Pagination.astro";
+import getSortedPosts from "@/utils/getSortedPosts";
+import { getPath } from "@/utils/getPath";
+import { SITE } from "@/config";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return paginate(getSortedPosts(posts), { pageSize: SITE.postPerPage });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+// 按年份分组
+const grouped = page.data.reduce((acc: Record<string, typeof page.data>, post) => {
+  const year = new Date(post.data.pubDatetime).getFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+
+// tag 配色
+const TAG_COLORS: Record<string, string> = {
+  AI行业: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI应用: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI商业: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI产品: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI技术: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI工具: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI趋势: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  AI时代: "bg-violet-500/15 text-violet-700 dark:text-violet-300",
+  职业发展: "bg-amber-500/15 text-amber-700 dark:text-amber-300",
+  职业规划: "bg-amber-500/15 text-amber-700 dark:text-amber-300",
+  认知: "bg-fuchsia-500/15 text-fuchsia-700 dark:text-fuchsia-300",
+  思维: "bg-fuchsia-500/15 text-fuchsia-700 dark:text-fuchsia-300",
+  方法论: "bg-cyan-500/15 text-cyan-700 dark:text-cyan-300",
+  系统思维: "bg-cyan-500/15 text-cyan-700 dark:text-cyan-300",
+  自我: "bg-rose-500/15 text-rose-700 dark:text-rose-300",
+  自我成长: "bg-rose-500/15 text-rose-700 dark:text-rose-300",
+  写作: "bg-lime-500/15 text-lime-700 dark:text-lime-300",
+  阅读: "bg-lime-500/15 text-lime-700 dark:text-lime-300",
+  哲学: "bg-stone-500/15 text-stone-700 dark:text-stone-300",
+  禅: "bg-stone-500/15 text-stone-700 dark:text-stone-300",
+  体系设计: "bg-blue-500/15 text-blue-700 dark:text-blue-300",
+  复杂系统: "bg-blue-500/15 text-blue-700 dark:text-blue-300",
+  安全管理: "bg-orange-500/15 text-orange-700 dark:text-orange-300",
+  执行力: "bg-teal-500/15 text-teal-700 dark:text-teal-300",
+  完美主义: "bg-teal-500/15 text-teal-700 dark:text-teal-300",
+  迭代: "bg-teal-500/15 text-teal-700 dark:text-teal-300",
+  情绪管理: "bg-pink-500/15 text-pink-700 dark:text-pink-300",
+  认知科学: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300",
+};
+
+function tagColor(t: string): string {
+  return TAG_COLORS[t] || "bg-zinc-500/15 text-zinc-700 dark:text-zinc-300";
+}
+
+function formatDate(d: Date) {
+  return `${d.getMonth() + 1} 月 ${d.getDate()} 日`;
+}
+
+function readTimeOf(post: any) {
+  // 简单估算：中文字符 / 350 字/分钟
+  const text = post.body || "";
+  const chars = (text.match(/[一-龥]/g) || []).length;
+  return Math.max(2, Math.round(chars / 350));
+}
+
+const langLabel = (lang?: string) => lang === "zh" ? "中文" : lang === "en" ? "EN" : "";
+const langColor = (lang?: string) =>
+  lang === "zh" ? "bg-rose-500/15 text-rose-700 dark:text-rose-300" :
+  lang === "en" ? "bg-sky-500/15 text-sky-700 dark:text-sky-300" :
+  "bg-zinc-500/15 text-zinc-600 dark:text-zinc-300";
+---
+
+<Layout title={`Posts | ${SITE.title}`}>
+  <Header />
+  <Main pageTitle="Posts" pageDesc="写点 AI、Agent、认知、思考相关的事。">
+    <ul class="list-none p-0">
+      {years.map((year, yi) => (
+        <>
+          <div
+            class="slide-enter select-none relative h-20 pointer-events-none"
+            style={`--enter-stage: ${yi * 2 - 2}; --enter-step: 60ms`}
+          >
+            <span class="absolute text-8em font-bold stroke-text stroke-text-2 op-10 left-[-3rem] top-[-2rem]">
+              {year}
+            </span>
+          </div>
+
+          {grouped[year].map((post, idx) => (
+            <li class="slide-enter my-6" style={`--enter-stage: ${yi * 2 + idx + 1}; --enter-step: 60ms`}>
+              <a
+                href={getPath(post.id, post.filePath)}
+                class="block border-0! no-underline! opacity-70 hover:opacity-100 transition-opacity"
+              >
+                <div class="flex flex-col md:flex-row md:items-center gap-2 mb-1">
+                  <div class="flex gap-2 flex-wrap items-center flex-1 min-w-0">
+                    {langLabel(post.data.lang) && (
+                      <span class={`text-xs rounded px-1.5 py-0.5 ${langColor(post.data.lang)}`}>
+                        {langLabel(post.data.lang)}
+                      </span>
+                    )}
+                    <span class="text-lg font-bold text-(--fg-deeper)">
+                      {post.data.title}
+                    </span>
+                  </div>
+                  <div class="flex gap-2 items-center flex-wrap text-sm">
+                    <span class="op-50 ws-nowrap">
+                      {formatDate(post.data.pubDatetime)}
+                    </span>
+                    <span class="op-40 ws-nowrap">· {readTimeOf(post)} 分钟</span>
+                  </div>
+                </div>
+
+                {post.data.tags && post.data.tags.length > 0 && (
+                  <div class="flex gap-1 flex-wrap mb-1">
+                    {post.data.tags.map((t: string) => (
+                      <span class={`text-xs rounded px-1.5 py-0.5 ${tagColor(t)}`}>
+                        #{t}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {post.data.description && (
+                  <p class="op-60 text-sm mt-1 mb-0">
+                    {post.data.description}
+                  </p>
+                )}
+              </a>
+            </li>
+          ))}
+        </>
+      ))}
+    </ul>
+  </Main>
+
+  <Pagination {page} />
+
+  <Footer noMarginTop={page.lastPage > 1} />
+</Layout>
