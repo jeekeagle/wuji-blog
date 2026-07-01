@@ -53,7 +53,7 @@ const structuredData = {
 <!doctype html>
 <html
   dir={SITE.dir}
-  lang=`${SITE.lang ?? "en"}`
+  lang={SITE.lang ?? "en"}
   class={`${scrollSmooth && "scroll-smooth"}`}
 >
   <head>
@@ -79,12 +79,17 @@ const structuredData = {
     <meta name="description" content={description} />
     <meta name="author" content={author} />
     <link rel="sitemap" href={sitemapHref} />
+    <meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0d0b" media="(prefers-color-scheme: dark)" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:type" content="website" />
 
     <!-- Article Published/Modified time -->
     {
@@ -127,8 +132,6 @@ const structuredData = {
       href={new URL("rss.xml", Astro.site)}
     />
 
-    <meta name="theme-color" content="" />
-
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
@@ -141,7 +144,12 @@ const structuredData = {
       )
     }
 
-    <ClientRouter />
+    {/*
+      ClientRouter 走 swap fallback:跨页跳转不再做 fade/slide 动画,
+      保留 viewTransitionName 让 Card→详情页的标题流畅"飞过去"。
+      禅意站宁可无声一点,不留白屏闪烁。
+    */}
+    <ClientRouter fallback="swap" />
 
     <!-- Minimal inline script to prevent FOUC - sets theme immediately -->
     <script is:inline>
