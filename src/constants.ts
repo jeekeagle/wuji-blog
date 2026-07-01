@@ -14,13 +14,13 @@ interface Social {
 export const SOCIALS: Social[] = [
   {
     name: "GitHub",
-    href: "https://github.com/jeekeagle/NextBlog",
+    href: "https://github.com/jeekeagle/wuji-blog",
     linkTitle: `${SITE.title} on GitHub`,
     icon: IconGitHub,
   },
   {
     name: "RSS",
-    href: "/rss.xml",
+    href: `${import.meta.env.BASE_URL.replace(/\/$/, "")}/rss.xml`,
     linkTitle: `${SITE.title} RSS`,
     icon: IconRss,
   },

@@ -1,0 +1,69 @@
+name: Deploy to GitHub Pages
+
+# 推送到 main 自动部署，也可手动触发
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 让 workflow 有写 Pages、签 OIDC token 的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只跑一个部署，避免旧 build 把新 build 覆盖
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: ☁️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.11.1
+
+      - name: 🟢 Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: 📦 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🚀 Build
+        run: pnpm build
+        env:
+          # 项目页部署到 https://jeekeagle.github.io/wuji-blog/
+          # 切到自定义域名 / Vercel 时改为空字符串
+          BASE_PATH: /wuji-blog
+
+      - name: ⚙️ Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    steps:
+      - name: 🚀 Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

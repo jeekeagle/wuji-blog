@@ -1,6 +1,6 @@
 export const SITE = {
   // 暂时指向 GitHub Pages 仓库页，后续切到 Vercel 只需改这里
-  website: "https://jeekeagle.github.io/NextBlog/",
+  website: "https://jeekeagle.github.io/wuji-blog/",
   author: "theo",
   profile: "https://github.com/jeekeagle",
   desc: "无记 —— 一片留白的数字花园。",
@@ -15,7 +15,7 @@ export const SITE = {
   editPost: {
     enabled: true,
     text: "在 GitHub 编辑",
-    url: "https://github.com/jeekeagle/NextBlog/edit/main/",
+    url: "https://github.com/jeekeagle/wuji-blog/edit/main/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"

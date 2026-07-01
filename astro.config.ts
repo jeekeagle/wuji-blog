@@ -11,8 +11,14 @@ import {
 import { SITE } from "./src/config";
 
 // https://astro.build/config
+// 部署到 GitHub Pages 项目页（jeekeagle.github.io/wuji-blog/）时
+// 在 CI 里注入 BASE_PATH=/wuji-blog 即可，无需改这里
+// 切到 Vercel/自定义域名时设为空字符串
+const BASE_PATH = process.env.BASE_PATH ?? "/";
+
 export default defineConfig({
   site: SITE.website,
+  base: BASE_PATH,
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
