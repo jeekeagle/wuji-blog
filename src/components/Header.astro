@@ -45,8 +45,7 @@ const isActive = (path: string) => {
     id="top-nav-wrap"
     class:list={[
       "py-4 sm:py-6",
-      "border-b border-border",
-      "relative w-full bg-background",
+      "relative w-full",
       "flex items-baseline justify-between sm:items-center",
     ]}
   >
@@ -87,6 +86,16 @@ const isActive = (path: string) => {
         <li class="col-span-2">
           <a href={siteUrl("/tags")} class:list={{ "active-nav": isActive("/tags") }}>
             标签
+          </a>
+        </li>
+        <li class="col-span-2">
+          <a
+            href="https://jeekeagle.github.io/wuji/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-accent"
+          >
+            无记
           </a>
         </li>
         <li class="col-span-2">
