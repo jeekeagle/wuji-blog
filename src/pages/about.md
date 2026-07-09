@@ -44,3 +44,19 @@ date: 2026-07-09
 无记，不记给别人看，只记给自己。
 
 记录，然后获得自己。
+
+
+## 图集
+
+![图 1](/wuji-blog/posts/wuji-prologue/1.jpg)
+![图 10](/wuji-blog/posts/wuji-prologue/10.jpg)
+![图 11](/wuji-blog/posts/wuji-prologue/11.jpg)
+![图 12](/wuji-blog/posts/wuji-prologue/12.jpg)
+![图 2](/wuji-blog/posts/wuji-prologue/2.jpg)
+![图 3](/wuji-blog/posts/wuji-prologue/3.jpg)
+![图 4](/wuji-blog/posts/wuji-prologue/4.jpg)
+![图 5](/wuji-blog/posts/wuji-prologue/5.jpg)
+![图 6](/wuji-blog/posts/wuji-prologue/6.jpg)
+![图 7](/wuji-blog/posts/wuji-prologue/7.jpg)
+![图 8](/wuji-blog/posts/wuji-prologue/8.jpg)
+![图 9](/wuji-blog/posts/wuji-prologue/9.jpg)
