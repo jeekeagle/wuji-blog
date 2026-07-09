@@ -9,7 +9,7 @@ export const SITE = {
   lightAndDarkMode: true,
   // 文章总数 3 篇时,首页显示 3 篇比"显示 4 篇剩下的 1 篇列表里空着"更克制。
   // 以后写满 4 篇再改回 4。
-  postPerIndex: 3,
+  postPerIndex: 5,
   postPerPage: 8,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
