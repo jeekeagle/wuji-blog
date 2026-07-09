@@ -8,9 +8,9 @@ html[data-theme="light"] {
   /* 宣纸白：比纯白稍暖，呼应中式审美 */
   --bg: #faf7f0;
   --fg-light: #a39c8e;
-  --fg: #6b655a;
+  --fg: #000000;
   --fg-deep: #2a2622;
-  --fg-deeper: #131110;
+  --fg-deeper: #000000;
   --background: var(--bg);
   --foreground: var(--fg-deep);
   /* 朱砂：克制使用，只做印章/重点强调 */
