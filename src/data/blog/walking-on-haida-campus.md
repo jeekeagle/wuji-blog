@@ -31,17 +31,17 @@ tags:
 
 ## 图集
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/1.jpg" alt="图 1" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/1.jpg" alt="图 1" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/2.jpg" alt="图 2" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/2.jpg" alt="图 2" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/3.jpg" alt="图 3" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/3.jpg" alt="图 3" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/4.jpg" alt="图 4" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/4.jpg" alt="图 4" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/5.jpg" alt="图 5" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/5.jpg" alt="图 5" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/6.jpg" alt="图 6" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/6.jpg" alt="图 6" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/walking-on-haida-campus/7.jpg" alt="图 7" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/walking-on-haida-campus/7.jpg" alt="图 7" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 

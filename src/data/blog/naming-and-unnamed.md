@@ -37,19 +37,19 @@ tags:
 
 ## 图集
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/1.jpg" alt="图 1" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/1.jpg" alt="图 1" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/2.jpg" alt="图 2" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/2.jpg" alt="图 2" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/4.jpg" alt="图 3" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/4.jpg" alt="图 3" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/5.jpg" alt="图 4" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/5.jpg" alt="图 4" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/6.jpg" alt="图 5" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/6.jpg" alt="图 5" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/9.jpg" alt="图 6" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/9.jpg" alt="图 6" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/11.jpg" alt="图 7" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/11.jpg" alt="图 7" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/naming-and-unnamed/12.jpg" alt="图 8" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/naming-and-unnamed/12.jpg" alt="图 8" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 

@@ -51,27 +51,27 @@ tags:
 
 ## 图集
 
-<img src="/wuji-blog/images/posts/wuji-prologue/1.jpg" alt="图 1" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/1.jpg" alt="图 1" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/2.jpg" alt="图 2" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/2.jpg" alt="图 2" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/3.jpg" alt="图 3" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/3.jpg" alt="图 3" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/4.jpg" alt="图 4" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/4.jpg" alt="图 4" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/5.jpg" alt="图 5" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/5.jpg" alt="图 5" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/6.jpg" alt="图 6" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/6.jpg" alt="图 6" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/7.jpg" alt="图 7" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/7.jpg" alt="图 7" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/8.jpg" alt="图 8" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/8.jpg" alt="图 8" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/9.jpg" alt="图 9" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/9.jpg" alt="图 9" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/10.jpg" alt="图 10" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/10.jpg" alt="图 10" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/11.jpg" alt="图 11" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/11.jpg" alt="图 11" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/wuji-prologue/12.jpg" alt="图 12" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/wuji-prologue/12.jpg" alt="图 12" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 

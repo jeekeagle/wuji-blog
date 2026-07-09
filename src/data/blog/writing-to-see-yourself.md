@@ -35,27 +35,27 @@ tags:
 
 ## 图集
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/1.jpg" alt="图 1" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/1.jpg" alt="图 1" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/2.jpg" alt="图 2" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/2.jpg" alt="图 2" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/3.jpg" alt="图 3" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/3.jpg" alt="图 3" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/4.jpg" alt="图 4" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/4.jpg" alt="图 4" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/5.jpg" alt="图 5" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/5.jpg" alt="图 5" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/6.jpg" alt="图 6" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/6.jpg" alt="图 6" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/7.jpg" alt="图 7" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/7.jpg" alt="图 7" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/8.jpg" alt="图 8" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/8.jpg" alt="图 8" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/9.jpg" alt="图 9" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/9.jpg" alt="图 9" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/10.jpg" alt="图 10" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/10.jpg" alt="图 10" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/11.jpg" alt="图 11" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/11.jpg" alt="图 11" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
-<img src="/wuji-blog/images/posts/writing-to-see-yourself/12.jpg" alt="图 12" style="width: 100%; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
+<img src="/wuji-blog/images/posts/writing-to-see-yourself/12.jpg" alt="图 12" style="width: 100%; max-width: none; height: auto; display: block; margin: 1.5rem auto; border-radius: 2px;">
 
