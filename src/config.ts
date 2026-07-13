@@ -19,7 +19,7 @@ export const SITE = {
     text: "在 GitHub 编辑",
     url: "https://github.com/jeekeagle/wuji-blog/edit/main/",
   },
-  dynamicOgImage: true,
+  dynamicOgImage: false,  // 2026-07-13 disabled: Google Font CDN 400 in CI; OG images disabled site-wide until fonts stabilize
   dir: "ltr", // "rtl" | "auto"
   lang: "zh-CN", // html lang code: zh-CN 比 zh 更精确,SEO/读屏都更友好
   timezone: "Asia/Shanghai", // Default global timezone (IANA format)
